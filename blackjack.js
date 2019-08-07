@@ -15,15 +15,27 @@ var stayButton = document.getElementById("staybutton");
 hitButton.style.display = "none";
 stayButton.style.display = "none";
 
+newGameButton.addEventListener("click", function () {
+    game.innerText = "New Game Starting.....";
+    newGameButton.style.display = "none";
+
+    setTimeout(function () {
+        hitButton.style.display = "inline";
+        stayButton.style.display = "inline";
+        game.innerText = "";
+    }, 1500);
+
+});
+
 // New Deck 
 function newDeck() {
     deck = [];
 
-    for (i = 0; i < suit.length; i++){
-        for (d = 0; d < value.length; d++){
+    for (i = 0; i < suit.length; i++) {
+        for (d = 0; d < value.length; d++) {
 
             var card = {
-                suit : suit[i],
+                suit: suit[i],
                 value: value[d],
             };
 
