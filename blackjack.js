@@ -1,4 +1,3 @@
-console.log("Welcome to BlackJack!");
 
 var suit = ['Hearts', 'Clubs', 'Diamonds', 'Spades']
 var value = ["Ace", "King", "Queen", "Jack", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1"]
@@ -15,6 +14,8 @@ var stayButton = document.getElementById("staybutton");
 hitButton.style.display = "none";
 stayButton.style.display = "none";
 
+
+// New Button on onClick
 newGameButton.addEventListener("click", function () {
     game.innerText = "New Game Starting.....";
     newGameButton.style.display = "none";
@@ -61,6 +62,7 @@ var userCards = [nextCard(), nextCard()];
 
 
 alert("Welcome to BlackJack!");
+console.log("Welcome to BlackJack!");
 console.log("Cards Dealt");
 console.log("" + cardName(userCards[0]));
 console.log("" + cardName(userCards[1]));
