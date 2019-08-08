@@ -30,6 +30,7 @@ newGameButton.addEventListener("click", function () {
 
     // Shuffle New Deck on Button Click
     deck = newDeck();
+    shuffleCards(deck);
     userCards = [nextCard(), nextCard()];
     dealerCards = [nextCard(), nextCard()];
 
@@ -41,6 +42,7 @@ newGameButton.addEventListener("click", function () {
        
     }, 1500);
 });
+
 // New Deck 
 function newDeck() {
     deck = [];
@@ -55,26 +57,39 @@ function newDeck() {
         return deck;
     };
 };
+
 // Card Name
 function cardName(card) {
     return card.value + " of " + card.suit;
 }
+
 // Next Card 
 function nextCard() {
     return deck.shift();
 };
 
 // Game Status
-
 function gameStatus(){
     if (!startGame){
         title.innerText = "Welcome To BlackJack";
         game.innerText = "";
-    } else {
+    }else {
         title.innerText = "";
         game.innerText = "Your Turn!"
         };
+
+        for (var i = 0; i < deck.length; i++){textArea.innerText += "\n" + nextCard(deck[i]);}
 };
+
+function shuffleCards(deck){
+    for (var i = 0; i < deck.length; i++){
+        var cardValue = Math.trunc(Math.random()* deck.length);
+        var shuffle = deck[cardValue];
+        deck[cardValue] = deck[i];
+        deck[i] = shuffle;
+        
+    }
+}
 
 
 
